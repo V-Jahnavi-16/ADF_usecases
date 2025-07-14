@@ -1,0 +1,9 @@
+{
+	"name": "usecasefactorydata3",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "99646e3a-ce22-488b-8793-ffe49aa2ad26",
+		"tenantId": "76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61"
+	}
+}
