@@ -1,0 +1,92 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "2016_Medals",
+						"type": "DatasetReference"
+					},
+					"name": "Usecase2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "gold",
+						"type": "DatasetReference"
+					},
+					"name": "gold"
+				},
+				{
+					"dataset": {
+						"referenceName": "silver",
+						"type": "DatasetReference"
+					},
+					"name": "silver"
+				},
+				{
+					"dataset": {
+						"referenceName": "bronze",
+						"type": "DatasetReference"
+					},
+					"name": "bronze"
+				}
+			],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ID as string,",
+				"          Name as string,",
+				"          Gender as string,",
+				"          Age as string,",
+				"          {Height (cm)} as string,",
+				"          {Weight (kg)} as string,",
+				"          Team as string,",
+				"          NOC as string,",
+				"          Games as string,",
+				"          Year as string,",
+				"          Season as string,",
+				"          City as string,",
+				"          Sport as string,",
+				"          Event as string,",
+				"          Medal as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Usecase2",
+				"Usecase2 split(Medal==\"Gold\",",
+				"     Medal==\"Silver\",",
+				"     Medal==\"Bronze\",",
+				"     disjoint: false) ~> split1@(Gold, Silver, Bronze)",
+				"split1@Gold sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> gold",
+				"split1@Silver sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> silver",
+				"split1@Bronze sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> bronze"
+			]
+		}
+	}
+}
