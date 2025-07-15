@@ -1,0 +1,9 @@
+{
+	"name": "usecasefactory5",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b80edc68-8e65-424d-806b-367d284b46fe",
+		"tenantId": "76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61"
+	}
+}
