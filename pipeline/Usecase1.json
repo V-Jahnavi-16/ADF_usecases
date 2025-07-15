@@ -1,0 +1,14 @@
+{
+	"name": "Usecase1",
+	"properties": {
+		"variables": {
+			"starttime": {
+				"type": "String"
+			},
+			"endtime": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
