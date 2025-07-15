@@ -1,9 +1,9 @@
 {
 	"name": "usecasefactory4",
-	"location": "eastus",
+	"location": "southindia",
 	"identity": {
 		"type": "SystemAssigned",
-		"principalId": "a532cbae-cb59-4e6e-af9c-e4edbcd18bcb",
+		"principalId": "af446ae1-95b8-4f9f-9884-3d520cf78f2c",
 		"tenantId": "76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61"
 	}
 }
