@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "AzureSqlTable2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
@@ -40,7 +40,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "ValidSales"
+			"table": "inValidSales"
 		}
 	}
 }
